@@ -17,7 +17,7 @@ printf "      -= ${WHITE}Steam Profile Picture Bot${NC} =- \n"
 printf " -= Written by ${PURPLE}Andriux${NC}, powered by ${GREEN}cURL${NC} =- \n"
 
 #Reads config file
-scriptFolder="/home/plastic/Documents/SteamAvatarBot"
+scriptFolder="/home/user/Documents/SteamAvatarBot"
 pictureFolder="`sed -n 1p ${scriptFolder}/config.cfg`"
 maxAvatar="`sed -n 2p ${scriptFolder}/config.cfg`"
 currentAvatar="`sed -n 3p ${scriptFolder}/config.cfg`"
