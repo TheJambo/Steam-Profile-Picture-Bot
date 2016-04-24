@@ -22,14 +22,19 @@ steamcommunity.com	FALSE	/	FALSE	0	sessionid	eigiidremp266aivzm18ms1r
 steamcommunity.com	FALSE	/	FALSE	0	steamCountry	US%7Ccd5b514bd466eb9171270b68eade43f8
 steamcommunity.com	FALSE	/	FALSE	0	steamLogin	76561198053562138%7C%7CFHC7J6UE1QJE0GVNSPFC83JXNW1P0HYSKJCUZ2JI
 ```
-The first line is your *sessionid cookie*.  
-The second line is your *steamContry cookie*.  
-The third line is a combination of your *steam64ID* and *steamLoginSecure cookie*. It is combined in the following way:
+* The first line is your *sessionid cookie*.  
+* The second line is your *steamContry cookie*.  
+* The third line is a combination of your *steam64ID* and *steamLoginSecure cookie*. It is combined in the following way:
 ```
 {steamID64}%7C%7C{steamLoginSecure cookie}
 ```
-The **second method** is to look at the cookies used when browsing Steam, using [Firebug](https://getfirebug.com/).
-
+  
+The **second method** is to look at the cookies used in requests, when browsing Steam. This can be done using [Firebug](https://getfirebug.com/).  
+After getting and launching Firebug, go to any page on *steamcommunity.com* (for example, your Steam profile page).  
+In Firebug, go to the **Net** tab, and **All** section. Find the **GET /id/yourID/** request (or similar), and look at the **Cookies** section of the request. For convenience, this is illustrated in a picture below.  
+![Firebug cookie guide](http://i.imgur.com/VqSffu0.png)
+Find the appropriate values and treat them like in the first method (except *%7C* becomes *|*)  
+  
 Note these down somewhere for when setting up the config.cfg file.
 
 ### Setting up the script
