@@ -1,6 +1,6 @@
 # Steam Avatar Bot
 This is a short *Bash script* that uses *cURL* to send a profile change request to Steam's servers.   
-No bugs or exploits were used in the making of this script, as it does the same thing your Steam client or web browser would do.  
+No bugs or exploits have been used in the making of this script, as it does the same thing your Steam client or web browser would do.  
 This script currently only runs on Linux, however there are [alternatives](https://github.com/Leystryku/steamavatarchange) available for Windows. If anyone would like to port this script to Windows, feel free to do so.  
 
 While using this script, keep in mind that Steam might change the way it handles requests and, as a consequence, this script might no longer work as intended.
@@ -8,14 +8,14 @@ While using this script, keep in mind that Steam might change the way it handles
 ## Getting Started
 This script was written entirely in Unix Bash, and requires no additional libraries.
 
-### Prerequisities
+### Prerequisites
 * A working Linux installation. I used *Ubuntu 15.04 vivid* for developing, testing and debugging.
 * Some experience with websites and script debugging might help.
 
 ### Obtaining Steam cookies
 These are important to have, as the script does not implement logging into Steam on its own, and relies on pre-existing session cookies to be provided.  
-There are several ways of obtaining Steam cookies. I'll be focusing on using Firefox, as I used this browser during testing.  
-For both of my described methods, you will first have to sucessfully log into steam in Firefox.  
+There are several ways of obtaining Steam cookies. I will be focusing on using Firefox, as I used this browser during testing.  
+For both of my described methods, you will first have to successfully  log into steam in Firefox.  
   
 #### First method
 The first method is to export cookies from Firefox using the [Export Cookies](https://addons.mozilla.org/en-US/firefox/addon/export-cookies/) addon. From the exported cookies.txt file, find the following lines:
@@ -78,7 +78,7 @@ One way is to manually launch it every time you want a new profile picture. This
 ```
 bash <script path>/change.sh
 ```
-For now, the CLI is very basic, and doesn't offer much debug ability. However, the script can be modified to do so.  
+For now, the CLI is very basic, and does not offer much debug ability. However, the script can be modified to do so.  
 You may add the following command to the script:
 ```
 echo $output
@@ -92,8 +92,10 @@ For automating the profile picture change, *crontab* can be used. Sample crontab
 ```
 
 ## Final words
-This is one of my first Bash scripts ever written, so don't hold any mistakes against me.  
-I'm not sure about my stance on providing support. You can certainly try contacting me for support, but don't expect me to fix every issue you're having. I managed to get this working
+This is one of my first Bash scripts ever written, so do not hold any mistakes against me.  
+I am not sure about my stance on providing support. You can certainly try contacting me for support, but do not expect me to fix every issue you might have. I managed to get this working from scratch in around 5 hours, so you should too.  
+
+If you do have any questions, you can contact me on [Steam](http://steamcommunity.com/id/Andriux/).  
 
 ## Acknowledgments
 * [Stackoverflow](https://stackoverflow.com/), for being Stackoverflow.
