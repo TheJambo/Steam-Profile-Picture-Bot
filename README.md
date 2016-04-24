@@ -60,7 +60,7 @@ The config.cfg file consists of a total of 7 lines.
 ```
 You may leave this as it is, or change it to something else.
 * Line 2 - Set this to the *total amount of avatars* in the folder. The script currently does not implement folder browsing, thus iterating the filename is used.
-* Line 3 - The *current avatar* that is used. Set this to 0 when setting up.
+* Line 3 - The *current avatar* that is used. Set this to 1 when setting up.
 * Line 4 - Your *sessionid cookie*.
 * Line 5 - Your *steamID64*.
 * Line 6 - Your *steamLoginSecure cookie*. 
