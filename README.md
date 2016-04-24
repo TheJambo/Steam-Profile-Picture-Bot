@@ -83,7 +83,8 @@ You may add the following command to the script:
 ```
 echo $output
 ```
-This will output the response from the POST request, and can provide insight to errors.
+This will output the response from the POST request, and can provide insight to errors.  
+Also, *-s* can be removed from the curl command to see all of the request data.
 
 ### Automatic mode
 For automating the profile picture change, *crontab* can be used. Sample crontab command:
