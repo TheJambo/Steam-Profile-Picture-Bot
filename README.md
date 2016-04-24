@@ -6,13 +6,13 @@ This was written entirely in Unix Bash, and requires no additional dependencies 
 ### Prerequisities
 A working Linux installation. I used Ubuntu 15.04 vivid for developing, testing and debugging.
 
-###Installing
+###Setting up
 By default, the script expects itself to be in the following directory:
 ```
 /home/user/Documents/SteamAvatarBot
 ```
-This was done to allow the script to be automatable.
-To have it run somewhere else, you will have to change the $scriptFolder value (line 20 in change.sh).
+This is where the script expects the *config.cfg* file to be in and was done to allow the script to be automatable.  
+To have it run somewhere else, you will have to change the *$scriptFolder* value (*line 20* in *change.sh*).
 
 
 While following these instructions, keep in mind that 
