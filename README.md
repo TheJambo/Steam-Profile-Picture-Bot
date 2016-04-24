@@ -1,19 +1,20 @@
 # Steam Avatar Bot
-This is a short bash script that uses cURL to send a profile change request to Steam's servers.   
-No exploits were used in the making of this script, as it does the same thing your Steam client or web browser would do.  
-This script currently only runs on Linux, however there are [alternatives](https://github.com/Leystryku/steamavatarchange) available for Windows. If anyone would like to port this script to Windows, feel free to contact me on [Steam](http://steamcommunity.com/id/Andriux/).  
+This is a short *Bash script* that uses *cURL* to send a profile change request to Steam's servers.   
+No bugs or exploits were used in the making of this script, as it does the same thing your Steam client or web browser would do.  
+This script currently only runs on Linux, however there are [alternatives](https://github.com/Leystryku/steamavatarchange) available for Windows. If anyone would like to port this script to Windows, feel free to do so.  
 
-While using this script, keep in mind that Steam might change the way it handles requests and, as a consequence, this script might not work as intended.
+While using this script, keep in mind that Steam might change the way it handles requests and, as a consequence, this script might no longer work as intended.
 
 ## Getting Started
-This was written entirely in Unix Bash, requires no additional dependencies, and is automatable with *crontab*.
+This script was written entirely in Unix Bash, and requires no additional libraries.
 
 ### Prerequisities
 * A working Linux installation. I used *Ubuntu 15.04 vivid* for developing, testing and debugging.
-* Your Steam browser cookies. These are important to have, as the script does not implement logging into Steam on its own, and relies on pre-existing session cookies to be provided. Obtaining these will be explained in the next section.
+* Some experience with websites and script debugging might help.
 
 ### Obtaining Steam cookies
-There are several ways of doing this. I'll be focusing on using Firefox, as I used this browser during testing.  
+These are important to have, as the script does not implement logging into Steam on its own, and relies on pre-existing session cookies to be provided.  
+There are several ways of obtaining Steam cookies. I'll be focusing on using Firefox, as I used this browser during testing.  
 For both of my described methods, you will first have to sucessfully log into steam in Firefox.  
   
 #### First method
@@ -61,9 +62,39 @@ You may leave this as it is, or change it to something else.
 * Line 2 - Set this to the *total amount of avatars* in the folder. The script currently does not implement folder browsing, thus iterating the filename is used.
 * Line 3 - The *current avatar* that is used. Set this to 0 when setting up.
 * Line 4 - Your *sessionid cookie*.
-* Line 5 - Your *steam64ID*.
+* Line 5 - Your *steamID64*.
 * Line 6 - Your *steamLoginSecure cookie*. 
 * Line 7 - Your *steamContry cookie*.
+Make sure the values are on the exact lines specified, with no extra whitespace.  
 
+### Setting up the pictures folder
+For now, the script uses a very rough way of file handling.  
+All of the pictures must be numbered from 1 to *n* (*total amount of pictures*), and must be in *.png* file format. If you want to use another file format, modify the script on *line 56*.
 
-more detailed description coming in a commit near you
+## Using the script
+There are two ways of using this script.  
+### Manual mode
+One way is to manually launch it every time you want a new profile picture. This can be done by executing:
+```
+bash <script path>/change.sh
+```
+For now, the CLI is very basic, and doesn't offer much debug ability. However, the script can be modified to do so.  
+You may add the following command to the script:
+```
+echo $output
+```
+This will output the response from the POST request, and can provide insight to errors.
+
+### Automatic mode
+For automating the profile picture change, *crontab* can be used. Sample crontab command:
+```
+0, 30 * * * * bash ~/Documents/SteamAvatarBot/change.sh
+```
+
+## Final words
+This is one of my first Bash scripts ever written, so don't hold any mistakes against me.  
+I'm not sure about my stance on providing support. You can certainly try contacting me for support, but don't expect me to fix every issue you're having. I managed to get this working
+
+## Acknowledgments
+* [Stackoverflow](https://stackoverflow.com/), for being Stackoverflow.
+* [Leystryku](https://github.com/Leystryku), whose code I found near the end of development. Helped narrow down some issues I was having.
