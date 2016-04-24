@@ -16,7 +16,8 @@ This was written entirely in Unix Bash, requires no additional dependencies, and
 There are several ways of doing this. I'll be focusing on using Firefox, as I used this browser during testing.  
 For both of my described methods, you will first have to sucessfully log into steam in Firefox.  
   
-The **first method** is to export cookies from Firefox using the [Export Cookies](https://addons.mozilla.org/en-US/firefox/addon/export-cookies/) addon. From the exported cookies.txt file, find the following lines:
+#### First method
+The first method is to export cookies from Firefox using the [Export Cookies](https://addons.mozilla.org/en-US/firefox/addon/export-cookies/) addon. From the exported cookies.txt file, find the following lines:
 ```
 steamcommunity.com	FALSE	/	FALSE	0	sessionid	eigiidremp266aivzm18ms1r
 steamcommunity.com	FALSE	/	FALSE	0	steamCountry	US%7Ccd5b514bd466eb9171270b68eade43f8
@@ -30,8 +31,9 @@ steamcommunity.com	FALSE	/	FALSE	0	steamLogin	76561198053562138%7C%7CFHC7J6UE1QJ
 ```
   
 Note these down somewhere for when setting up the config.cfg file.
-  
-The **second method** is to look at the cookies used in page requests, when browsing *steamcommunity.com*. In Firefox, this can be done using [Firebug](https://getfirebug.com/).  
+
+#### Second method
+The second method is to look at the cookies used in page requests, when browsing *steamcommunity.com*. In Firefox, this can be done using [Firebug](https://getfirebug.com/).  
 After installing and launching Firebug, go to any page on *steamcommunity.com* (for example, your Steam profile page).  
 In Firebug, go to the **Net** tab, and **All** section. Find the **GET /id/yourID/** request (or similar), and look at the **Cookies** section of the request. For convenience, this is illustrated in a picture below.  
   
