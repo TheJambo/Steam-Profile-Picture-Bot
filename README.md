@@ -29,13 +29,17 @@ steamcommunity.com	FALSE	/	FALSE	0	steamLogin	76561198053562138%7C%7CFHC7J6UE1QJ
 {steamID64}%7C%7C{steamLoginSecure cookie}
 ```
   
-The **second method** is to look at the cookies used in requests, when browsing Steam. This can be done using [Firebug](https://getfirebug.com/).  
-After getting and launching Firebug, go to any page on *steamcommunity.com* (for example, your Steam profile page).  
-In Firebug, go to the **Net** tab, and **All** section. Find the **GET /id/yourID/** request (or similar), and look at the **Cookies** section of the request. For convenience, this is illustrated in a picture below.  
-![Firebug cookie guide](http://i.imgur.com/VqSffu0.png)
-Find the appropriate values and treat them like in the first method (except *%7C* becomes *|*)  
-  
 Note these down somewhere for when setting up the config.cfg file.
+  
+The **second method** is to look at the cookies used in page requests, when browsing *steamcommunity.com*. In Firefox, this can be done using [Firebug](https://getfirebug.com/).  
+After installing and launching Firebug, go to any page on *steamcommunity.com* (for example, your Steam profile page).  
+In Firebug, go to the **Net** tab, and **All** section. Find the **GET /id/yourID/** request (or similar), and look at the **Cookies** section of the request. For convenience, this is illustrated in a picture below.  
+  
+![Firebug cookie guide](http://i.imgur.com/VqSffu0.png)
+  
+Find the appropriate cookie values and treat them like in the first method (except *%7C* becomes *|*)  
+  
+Again, note these down somewhere for when setting up the config.cfg file.
 
 ### Setting up the script
 By default, the script expects itself to be in the following directory:
