@@ -92,6 +92,12 @@ For automating the profile picture change, *crontab* can be used. Sample crontab
 0, 30 * * * * bash ~/Documents/SteamAvatarBot/change.sh
 ```
 
+## Known issues
+After further testing of v1.0 of the script, the following issues have appeared:
+* Running the script on a Raspberry Pi requires some variable cleaning (removing *\t* from every line read from the *config.cfg* file).
+* Steam cookies might expire and cause the POST requests to fail.
+I will try adressing these in further releases.
+
 ## Final words
 This is one of my first Bash scripts ever written, so do not hold any mistakes against me.  
 I am not sure about my stance on providing support. You can certainly try contacting me for support, but do not expect me to fix every issue you might have. I managed to get this working from scratch in around 5 hours, so you should too.  
