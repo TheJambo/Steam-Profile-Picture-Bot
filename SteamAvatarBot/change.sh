@@ -21,12 +21,11 @@ scriptFolder="/home/user/Documents/SteamAvatarBot"
 pictureFolder="`sed -n 1p ${scriptFolder}/config.cfg`"
 maxAvatar="`sed -n 2p ${scriptFolder}/config.cfg`"
 currentAvatar="`sed -n 3p ${scriptFolder}/config.cfg`"
-uploadURL="http://steamcommunity.com/actions/FileUploader"
+uploadURL="https://steamcommunity.com/actions/FileUploader"
 
 sessionID="`sed -n 4p ${scriptFolder}/config.cfg`"
 steamID64="`sed -n 5p ${scriptFolder}/config.cfg`"
 authCode="`sed -n 6p ${scriptFolder}/config.cfg`"
-countryCode="`sed -n 7p ${scriptFolder}/config.cfg`"
 
 #Variable output for user
 printf "    ${CONFIG}CONFIG${NC}: Pictures Folder: ${GREY}${pictureFolder}${NC}\n"
@@ -48,7 +47,7 @@ sed -i "4d" "${scriptFolder}/config.cfg"
 printf "    ${INFO}INFO${NC}: Sending Request\n"
 output=$(curl -s \
 -H "Content-Type: multipart/form-data" \
--b "sessionid=${sessionID}; steamCountry=${countryCode}; steamLogin=${steamID64}%7C%7C${authCode};" \
+-b "sessionid=${sessionID}; steamLoginSecure=${steamID64}%7C%7C${authCode};" \
 -F "type=player_avatar_image" \
 -F "sId=${steamID64}" \
 -F "sessionid=${sessionID}" \
