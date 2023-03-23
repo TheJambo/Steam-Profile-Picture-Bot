@@ -13,20 +13,23 @@ This script was written entirely in Unix Bash, and requires no additional librar
 * Some experience with websites and script debugging might help.
 
 ### Obtaining Steam cookies
-These are important to have, as the script does not implement logging into Steam on its own, and relies on pre-existing session cookies to be provided.  
+These are important to have, as the script does not implement logging into Steam on its own, and relies on pre-existing session cookies to be provided. Don't forget that cookies might expire and become invalid after a while, so you will have to replace them with the new ones.  
+
 There are several ways of obtaining Steam cookies. I will be focusing on using Firefox, as I used this browser during testing.  
-For both of my described methods, you will first have to successfully  log into steam in Firefox.  
+For both of my described methods, you will first have to successfully  log into steam in Firefox.
   
 #### First method
-The first method is to export cookies from Firefox using the [Export Cookies](https://addons.mozilla.org/en-US/firefox/addon/export-cookies/) addon. From the exported cookies.txt file, find the following lines:
+The first method is to export cookies from Firefox using the [Cookie Quick Manager](https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager/) addon. Click on the addon icon, go to 'Manage all Cookies' and search for 'steamcommunity':
+
+![Cookie Quick Manager guide](https://i.imgur.com/fSzLPk9.png)
+
+Find the following lines:
 ```
-steamcommunity.com	FALSE	/	FALSE	0	sessionid	eigiidremp266aivzm18ms1r
-steamcommunity.com	FALSE	/	FALSE	0	steamCountry	US%7Ccd5b514bd466eb9171270b68eade43f8
-steamcommunity.com	FALSE	/	FALSE	0	steamLogin	76561198053562138%7C%7CFHC7J6UE1QJE0GVNSPFC83JXNW1P0HYSKJCUZ2JI
+sessionid: eigiidremp266aivzm18ms1r
+steamLoginSecure: 76561198053562138%7C%7CdxkaMINHZGXDzFrvrRKgfHmhDAcjWNqfAYNzUQHJtFuMvfiYXRsmQFO...
 ```
 * The first line is your *sessionid cookie*.  
-* The second line is your *steamContry cookie*.  
-* The third line is a combination of your *steam64ID* and *steamLoginSecure cookie*. It is combined in the following way:
+* The second line is a combination of your *steam64ID* and *steamLoginSecure cookie*. It is combined in the following way:
 ```
 {steamID64}%7C%7C{steamLoginSecure cookie}
 ```
@@ -64,7 +67,6 @@ You may leave this as it is, or change it to something else.
 * Line 4 - Your *sessionid cookie*.
 * Line 5 - Your *steamID64*.
 * Line 6 - Your *steamLoginSecure cookie*. 
-* Line 7 - Your *steamContry cookie*.
 Make sure the values are on the exact lines specified, with no extra whitespace.  
 
 ### Setting up the pictures folder
@@ -87,9 +89,9 @@ This will output the response from the POST request, and can provide insight to 
 Also, *-s* can be removed from the curl command to see all of the request data.
 
 ### Automatic mode
-For automating the profile picture change, *crontab* can be used. Sample crontab command:
+For automating the profile picture change, *crontab* can be used. Sample crontab command to run the script every 30 minutes:
 ```
-0, 30 * * * * bash ~/Documents/SteamAvatarBot/change.sh
+*/30 * * * * bash ~/Documents/SteamAvatarBot/change.sh
 ```
 
 ## Known issues
